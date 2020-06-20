@@ -52,26 +52,6 @@ public class kohonen {
 			iter++;
 		}
 	}
-	
-    public static int test(double[] pattern){
-        double[] distances = new double[neurons.length];
-        for (int i = 0; i < neurons.length; i++) {
-            distances[i] = distance(neurons[i], pattern);
-        }
-        return smallest(distances);
-    }
-    
-    public static int smallest(double[] distances){
-        int output = -1;
-        double minor = Double.MAX_VALUE;
-        for (int i = 0; i < distances.length; i++) {
-            if (distances[i] < minor) {
-                minor = distances[i];
-                output = i;
-            }
-        }
-        return output;
-    }
     
     public static double distance(double[] w, double[] point){
         double sum = 0.0;
