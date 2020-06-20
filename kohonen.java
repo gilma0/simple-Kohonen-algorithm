@@ -19,14 +19,6 @@ public class kohonen {
 	static double [] distance;
 	static double lr;
 	
-	public static double calculate(double[] w1, double[] w2) {
-        double dist = 0.0;
-        for (int i = 0; i < w1.length; i++) {
-            dist += Math.pow(w1[i] - w2[i], 2);
-        }
-        dist = Math.sqrt(dist);
-        return (1 / (1 + dist));
-    }
 	
 	//getting the closest neuron
 	public static int Euclidean_distance(double x_input, double y_input) {
@@ -201,7 +193,7 @@ public class kohonen {
     
     public static void random_inputs_neurons_for_E_B() {
     	neurons = new double [30][2];
-		inputs = new double [10000][2];
+		inputs = new double [10][2];
 		for (int i = 0; i < neurons.length; i++) {
 			double angle = Math.random()*Math.PI*2;
 			neurons[i][0] = Math.cos(angle) ;
